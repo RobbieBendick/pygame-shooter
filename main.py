@@ -133,10 +133,8 @@ def main():
             winner_text = "Yellow Wins!"
         if yellow_health <= 0:
             winner_text = "Red Wins!"
-
         if winner_text != "":
             draw_winner(winner_text)
-            
             break
 
         keys_pressed = pygame.key.get_pressed()
@@ -144,11 +142,6 @@ def main():
         red_handle_movement(keys_pressed, red)
         handle_bullets(yellow_bullets, red_bullets, yellow, red)
         draw_window(red, yellow, red_bullets, yellow_bullets, red_health, yellow_health)
-
-    for bullet in red_bullets:
-        red_bullets.remove(bullet)
-    for bullet in yellow_bullets:
-        yellow_bullets.remove(bullet)
     main()
 
 if __name__ == "__main__":
